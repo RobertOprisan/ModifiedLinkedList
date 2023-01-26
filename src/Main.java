@@ -1,20 +1,55 @@
 public class Main {
-    public static void main(String[] args) {
-        LinkedList<String> list = new LinkedList<String>();
-        list.insertFirst("one");
-        list.insertFirst("two");
-        list.insertFirst("three");
-        list.print();
-        while (!list.isEmpty()) {
-            try {
-                String obj = list.getLastObject();
-                System.out.println(obj);
-                list.remove(obj);
-            } catch (EmptyListException ex) {
-                System.out.println("Empty list");
-            } catch (ObjectNotFoundException e) {
-                System.out.println("error");
-            }
-        }
+    public static void main(String[] args) throws
+            ObjectNotFoundException,
+            EmptyListException {
+        Stack<String> s = new Stack<String>();
+        s.push("One");
+        s.push("Two");
+        s.push("Three");
+        s.print( );
+        System.out.println(s.pop( ));
+        System.out.println(s.pop( ));
+        s.print( );
+        System.out.println("---------------");
+        s.empty();
+        s.push("One");
+        s.push("Two");
+        s.print( );
+        s.pop( );
+        s.pop( );
+//s.pop( );
+        System.out.println("---------------");
+        s.empty();
+        s.push("One");
+        s.push("Two");
+        s.push("Three");
+        s.pop();
+        s.push("Four");
+        s.print();
+        System.out.println("================");
+        Queue2<String> q = new Queue2<String>();
+        q.push("One");
+        q.push("Two");
+        q.push("Three");
+        q.print( );
+        System.out.println(q.pop( ));
+        System.out.println(q.pop( ));
+        q.print( );
+        System.out.println("---------------");
+        q.empty();
+        q.push("One");
+        q.push("Two");
+        q.print( );
+        q.pop( );
+        q.pop( );
+//s.pop( );
+        System.out.println("---------------");
+        q.empty();
+        q.push("One");
+        q.push("Two");
+        q.push("Three");
+        q.pop();
+        q.push("Four");
+        q.print();
     }
 }
